@@ -1,0 +1,12 @@
+kind: PersistentVolume
+metadata:
+ name: myebsvol
+spec:
+ capacity:
+ storage: 1Gi
+ accessModes:
+ - ReadWriteOnce
+ persistentVolumeReclaimPolicy: Recycle
+ awsElasticBlockStore:
+ volumeID: # hear we need to give the ebs volume id which we are created.
+ fsType: ext4
